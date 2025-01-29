@@ -31,6 +31,11 @@
 - Simplified title information.
 - Increased window size to accommodate all content.
 - Added NOTICE PERIOD to TEMPLATE and CSV input file.
+- Added PROJECT NAME to TEMPLATE and CSV input file.
+
+### VERSION 1.6 ###
+
+# Set PAYRATE to 2 decimal places instead of 1
 
 ---
 

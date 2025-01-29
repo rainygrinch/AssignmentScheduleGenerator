@@ -37,10 +37,6 @@
 # Added NOTICE PERIOD to TEMPLATE and CSV INPUT FILE
 # Added PROJECT NAME to TEMPLATE and CSV INPUT FILE
 
-### VERSION 1.6 ###
-
-# Set PAYRATE to 2 decimal places instead of 1
-
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from tkinter.ttk import Progressbar
@@ -182,11 +178,7 @@ class AssignmentScheduleGeneratorApp:
             for para in doc.paragraphs:
                 for column_name in df.columns:
                     placeholder = f"{{{{{column_name}}}}}"
-                    # Ensure Pay Rate is formatted to 2 decimal places
-                    if column_name.lower() == "pay rate":
-                        replacement_value = f"£{float(row[column_name]):.2f}"
-                    else:
-                        replacement_value = str(row[column_name])
+                    replacement_value = str(row[column_name])
 
                     if placeholder in para.text:
                         for run in para.runs:
@@ -199,12 +191,7 @@ class AssignmentScheduleGeneratorApp:
                     for cell in row_cells.cells:
                         for column_name in df.columns:
                             placeholder = f"{{{{{column_name}}}}}"
-
-                            # Ensure Pay Rate is formatted to 2 decimal places
-                            if column_name.lower() == "pay rate":
-                                replacement_value = f"£{float(row[column_name]):.2f}"
-                            else:
-                                replacement_value = str(row[column_name])
+                            replacement_value = str(row[column_name])
 
                             if placeholder in cell.text:
                                 cell.text = cell.text.replace(placeholder, replacement_value)
